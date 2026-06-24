@@ -1,0 +1,344 @@
+```css
+/* ========= GLOBAL SETTINGS ========= */
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+background:linear-gradient(135deg,#000014,#01022a,#021038,#04091d);
+overflow-x:hidden;
+color:white;
+position:relative;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar{
+width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+background:linear-gradient(cyan,blue,purple,red,orange,yellow);
+border-radius:20px;
+}
+
+/* ========= STARS ========= */
+
+.stars,
+.stars2,
+.stars3{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+pointer-events:none;
+}
+
+.stars{
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 150s linear infinite;
+opacity:.7;
+}
+
+.stars2{
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 100s linear infinite reverse;
+opacity:.5;
+}
+
+.stars3{
+background:url("https://www.transparenttextures.com/patterns/stardust.png");
+animation:moveStars 60s linear infinite;
+opacity:.3;
+}
+
+@keyframes moveStars{
+from{
+transform:translateY(0);
+}
+to{
+transform:translateY(-2000px);
+}
+}
+
+/* ========= COMETS ========= */
+
+.comet{
+position:fixed;
+width:300px;
+height:4px;
+background:white;
+border-radius:20px;
+box-shadow:0 0 40px white;
+transform:rotate(-35deg);
+}
+
+.comet1{
+top:10%;
+left:-400px;
+animation:comet1 10s linear infinite;
+}
+
+.comet2{
+top:40%;
+left:-400px;
+animation:comet2 15s linear infinite;
+}
+
+@keyframes comet1{
+to{
+transform:translate(2200px,500px) rotate(-35deg);
+}
+}
+
+@keyframes comet2{
+to{
+transform:translate(2400px,700px) rotate(-35deg);
+}
+}
+
+/* ========= SPACESHIPS ========= */
+
+.ship{
+position:fixed;
+font-size:40px;
+z-index:50;
+}
+
+.ship1{
+top:20%;
+left:-10%;
+animation:ship1 30s linear infinite;
+}
+
+.ship2{
+top:70%;
+left:110%;
+animation:ship2 35s linear infinite;
+}
+
+@keyframes ship1{
+to{
+left:120%;
+}
+}
+
+@keyframes ship2{
+to{
+left:-20%;
+}
+}
+
+/* ========= FLOATING EARTH ========= */
+
+.earth-container{
+display:flex;
+justify-content:center;
+margin-top:40px;
+}
+
+.earth{
+width:220px;
+height:220px;
+border-radius:50%;
+box-shadow:
+0 0 40px cyan,
+0 0 100px blue,
+0 0 180px purple;
+animation:
+earthRotate 20s linear infinite,
+floatEarth 4s ease-in-out infinite;
+}
+
+@keyframes earthRotate{
+100%{
+transform:rotate(360deg);
+}
+}
+
+@keyframes floatEarth{
+50%{
+transform:translateY(-20px);
+}
+}
+
+/* ========= HEADER ========= */
+
+header{
+text-align:center;
+padding:40px;
+}
+
+.school-name{
+font-size:35px;
+font-weight:800;
+background:linear-gradient(90deg,cyan,blue,purple,pink,orange,yellow,cyan);
+background-size:500%;
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
+animation:rainbow 10s linear infinite;
+}
+
+.eco-title,
+.main-title{
+font-size:55px;
+margin-top:25px;
+font-weight:900;
+text-shadow:
+0 0 20px lime,
+0 0 50px green;
+animation:pulse 2s infinite;
+}
+
+.incharge,
+.sub-title{
+margin-top:20px;
+font-size:28px;
+color:gold;
+}
+
+@keyframes rainbow{
+100%{
+background-position:500%;
+}
+}
+
+@keyframes pulse{
+50%{
+transform:scale(1.05);
+}
+}
+
+/* ========= GLASS CARDS ========= */
+
+.glass{
+width:88%;
+margin:auto;
+margin-top:40px;
+padding:35px;
+border-radius:30px;
+
+background:rgba(255,255,255,.08);
+
+backdrop-filter:blur(20px);
+
+border:1px solid rgba(255,255,255,.2);
+
+box-shadow:
+0 0 20px cyan,
+0 0 40px blue;
+
+transition:.6s;
+}
+
+.glass:hover{
+transform:translateY(-10px);
+
+box-shadow:
+0 0 40px cyan,
+0 0 80px blue,
+0 0 150px purple;
+}
+
+/* ========= TEXT ========= */
+
+h1{
+font-size:40px;
+color:#00ffcc;
+margin-bottom:25px;
+}
+
+h2{
+color:gold;
+}
+
+p{
+font-size:20px;
+line-height:1.9;
+text-align:justify;
+}
+
+li{
+font-size:22px;
+margin-top:18px;
+}
+
+/* ========= FOOTER ========= */
+
+footer{
+text-align:center;
+padding:50px;
+margin-top:60px;
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(20px);
+}
+
+/* ========= FUTURE PAGES SUPPORT ========= */
+
+/*
+This CSS automatically supports:
+
+index.html
+details.html
+ayush.html
+members.html
+gallery.html
+events.html
+register.html
+
+No change required.
+*/
+
+/* ========= MOBILE ========= */
+
+@media(max-width:768px){
+
+.school-name{
+font-size:20px;
+}
+
+.eco-title,
+.main-title{
+font-size:30px;
+}
+
+.incharge,
+.sub-title{
+font-size:20px;
+}
+
+h1{
+font-size:24px;
+}
+
+p{
+font-size:16px;
+}
+
+li{
+font-size:18px;
+}
+
+.earth{
+width:150px;
+height:150px;
+}
+
+.glass{
+width:95%;
+padding:20px;
+}
+
+.ship{
+font-size:25px;
+}
+
+}
+
+/* ========= END ========= */
+```
